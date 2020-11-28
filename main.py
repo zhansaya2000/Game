@@ -54,8 +54,7 @@ class Buttons():
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
 
-        if (x < mouse[0] < x + self.width) and (y < mouse[1] < y + self.height):
-            # Рисуем кнопки, чтобы видеть их область
+        if (x < mouse[0] < x + self.width) and (y < mouse[1] < y + self.height)
             pygame.draw.rect(screen, self.choosed,
                              (x, y, self.width, self.height), 2)
             if click[0] == 1 and play is not None:
@@ -75,12 +74,11 @@ class Buttons():
         click = pygame.mouse.get_pressed()
 
         if (x < mouse[0] < x + self.width) and (y < mouse[1] < y + self.height):
-            # Рисуем кнопки, чтобы видеть их область
             pygame.draw.circle(screen, self.choosed, (x+35, y+20), 10)
 
             if click[0] == 1 and play is not None:
                 pygame.mixer.Sound.play(clickbut1)
-                pygame.time.delay(300)
+                pygame.time.delay(1000)
                 play(n)
 
         else:
@@ -155,19 +153,15 @@ menu = pygame.image.load('img/menu.png')
 map_view = pygame.image.load('img/map_view.jpg')
 levels = pygame.image.load('img/Levels.png')
 rule=pygame.image.load('img/rules.png')
-
 win = pygame.image.load('img/Win.png')
 lose = pygame.image.load('img/Lose.png')
 
 # Размер игры
 
 screen = pygame.display.set_mode((800, 640))
-
 background = pygame.Surface(screen.get_size())
 background.fill((255, 255, 255))
 pygame.display.set_caption('Fireboy and Watergirl')
-
-
 screen_size = screen.get_size()
 
 # Стены
@@ -286,7 +280,7 @@ class Charachter():
         self.hitbox = pygame.Rect(
             round(self.x), round(self.y+self.dy), self.width, self.height)
         self.y += self.dy
-        self.onGround = False  # Мы не знаем, когда мы на земле((
+        self.onGround = False  
         for wall in walls:
             if self.hitbox.colliderect(wall.hitbox):
                 if self.dy > 0:
@@ -499,6 +493,5 @@ def game(n):
             else:
                 ch.change_direction(Direction.UP)
         pygame.display.flip()
-
 
 start()
