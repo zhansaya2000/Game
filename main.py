@@ -54,7 +54,7 @@ class Buttons():
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
 
-        if (x < mouse[0] < x + self.width) and (y < mouse[1] < y + self.height)
+        if (x < mouse[0] < x + self.width) and (y < mouse[1] < y + self.height):
             pygame.draw.rect(screen, self.choosed,
                              (x, y, self.width, self.height), 2)
             if click[0] == 1 and play is not None:
